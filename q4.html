@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Taskie</title>
+    <link href="styles.css" rel="stylesheet">
+
+  </head>
+  <body>
+<div align="middle" class="box">
+  <a  style="text-decoration:none" href="https://instagram.com/charle_404">You got that! Then try this fourth one.<br><br>If,<br>1=5<br>2=6<br>3=7<br>4=8<br>5=?</a><br><br><br>
+  <input type="text" id="alphanumericInput" oninput="validateAndChangeColor(this)">
+  <button id="go" onclick="submitText()">Go</button>
+  </div>
+  <script>
+      function validateAndChangeColor(input) {
+          var cleanedInput = input.value.replace(/[^a-zA-Z ]/g, '');
+          input.value = cleanedInput;
+
+          if (cleanedInput.toLowerCase() === 'one') {
+              input.style.borderColor = 'lightgreen';
+              input.style.color = 'lightgreen';
+          } else {
+              input.style.borderColor = 'red';
+              input.style.color = 'red';
+          }
+      }
+
+      function submitText() {
+          var input = document.getElementById('alphanumericInput');
+
+          if (input.value.toLowerCase() === 'one') {
+              window.location.href = 'q5.html';
+          }
+      }
+  </script>
+  </body>
+</html>

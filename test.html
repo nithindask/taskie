@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphanumeric Input</title>
+    <style>
+        /* Style for the input */
+        #alphanumericInput {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <label for="alphanumericInput">Enter Alphanumeric Text:</label>
+    <input type="text" id="alphanumericInput" oninput="validateAndChangeColor(this)">
+    <button onclick="submitText()">Submit</button>
+
+    <script>
+        function validateAndChangeColor(input) {
+            // Remove any non-alphanumeric characters
+            var cleanedInput = input.value.replace(/[^a-zA-Z0-9]/g, '');
+            input.value = cleanedInput;
+
+            // Check if the cleaned input is 'example'
+            if (cleanedInput.toLowerCase() === 'example') {
+                input.style.borderColor = 'green';
+                input.style.color = 'green';
+            } else {
+                input.style.borderColor = 'red';
+                input.style.color = 'red';
+            }
+        }
+
+        function submitText() {
+            var input = document.getElementById('alphanumericInput');
+
+            // Check if the cleaned input is 'example'
+            if (input.value.toLowerCase() === 'example') {
+                // Redirect to 'name.html'
+                window.location.href = 'name.html';
+            }
+        }
+    </script>
+</body>
+</html>

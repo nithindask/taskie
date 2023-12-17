@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Taskie</title>
+    <link href="styles.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div id="agePopup">
+            <div id="popupContent">
+                <p>Please enter your age:</p>
+                <input type="number" id="ageInput" placeholder="Enter your age">
+                <button id="submitBtn" onclick="checkAge()">Submit</button>
+            </div>
+        </div>
+        <div id="princessContent" style="display: none;">
+          <div align="middle" class="box">
+            <a  style="text-decoration:none" href="https://instagram.com/charle_404">Welcome <font color="lightblue">princess&nbsp;</font><font color="red"><3</font><br><br>
+            Would you like to participate in a challenge ?</a><br><br><br>
+            <a  style="text-decoration:none" class="options" href="yes.html">Yes please</a><br><br><br>
+            <a  style="text-decoration:none" class="options" href="no.html">No thanks</a>
+            </div>
+    </div>
+
+    <div id="queenContent" style="display: none;">
+      <div align="middle" class="box">
+        <a  style="text-decoration:none" href="https://instagram.com/charle_404">Welcome <font color="lightblue">queen&nbsp;</font><font color="red"><3</font><br><br>
+        Would you like to participate in a challenge ?</a><br><br><br>
+        <a  style="text-decoration:none" class="options" href="yes.html">Yes please</a><br><br><br>
+        <a  style="text-decoration:none" class="options" href="no.html">No thanks</a>
+        </div>
+    </div>
+
+    <script>
+        function showAgePopup() {
+            document.getElementById("agePopup").style.display = "block";
+        }
+        function checkAge() {
+            var ageInput = document.getElementById("ageInput");
+            var age = parseInt(ageInput.value);
+
+            if (isNaN(age) || age < 0 || age > 120 || age % 1 !== 0) {
+                alert("Please enter a valid natural number between 0 and 120.");
+                return;
+            }
+
+            if (age < 18) {
+                document.getElementById("princessContent").style.display = "block";
+            } else {
+                document.getElementById("queenContent").style.display = "block";
+            }
+            document.getElementById("agePopup").style.display = "none";
+        }
+        window.onload = showAgePopup;
+    </script>
+
+  </body>
+</html>
