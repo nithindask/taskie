@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Taskie</title>
+    <link href="styles.css" rel="stylesheet">
+
+  </head>
+  <body>
+<div align="middle" class="box">
+  <a  style="text-decoration:none" href="https://instagram.com/charle_404">Great! Here goes the third question.<br><br>There are 5 sisters in a house.<br>One of them are cooking.<br>One is drawing.<br>One is playing checkers.<br>One is sleeping.<br>What is the fifth sister doing ?</a><br><br><br>
+  <input type="text" id="alphanumericInput" oninput="validateAndChangeColor(this)">
+  <button id="go" onclick="submitText()">Go</button>
+  </div>
+  <script>
+      function validateAndChangeColor(input) {
+          var cleanedInput = input.value.replace(/[^a-zA-Z ]/g, '');
+          input.value = cleanedInput;
+
+          if (cleanedInput.toLowerCase() === 'playing checkers') {
+              input.style.borderColor = 'lightgreen';
+              input.style.color = 'lightgreen';
+          } else {
+              input.style.borderColor = 'red';
+              input.style.color = 'red';
+          }
+      }
+
+      function submitText() {
+          var input = document.getElementById('alphanumericInput');
+
+          if (input.value.toLowerCase() === 'playing checkers') {
+              window.location.href = 'f15u18.html';
+          }
+      }
+  </script>
+  </body>
+</html>

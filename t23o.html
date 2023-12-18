@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Taskie</title>
+    <link href="styles.css" rel="stylesheet">
+
+  </head>
+  <body>
+<div align="middle" class="box">
+  <a  style="text-decoration:none" href="https://instagram.com/charle_404">Good! Here goes the second question.<br><br>A cat has 3 kittens.<br>The first kitten's name is Monday.<br>The second kitten's name is Tuesday.<br>The third kitten's name is Wednesday.<br>What is the mother's name.<br>What is the mother's name ?</a><br><br><br>
+  <input type="text" id="alphanumericInput" oninput="validateAndChangeColor(this)">
+  <button id="go" onclick="submitText()">Go</button>
+  </div>
+  <script>
+      function validateAndChangeColor(input) {
+          var cleanedInput = input.value.replace(/[^a-zA-Z ]/g, '');
+          input.value = cleanedInput;
+
+          if (cleanedInput.toLowerCase() === 'what') {
+              input.style.borderColor = 'lightgreen';
+              input.style.color = 'lightgreen';
+          } else {
+              input.style.borderColor = 'red';
+              input.style.color = 'red';
+          }
+      }
+
+      function submitText() {
+          var input = document.getElementById('alphanumericInput');
+
+          if (input.value.toLowerCase() === 'what') {
+              window.location.href = 't8r5e.html';
+          }
+      }
+  </script>
+  </body>
+</html>
